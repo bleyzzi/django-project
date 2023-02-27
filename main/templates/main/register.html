@@ -1,0 +1,26 @@
+{% extends "main/base.html" %}
+
+{% block title %}
+    Register
+{% endblock %}
+
+{% block content %}
+<div class="container py-5">
+	<h1>Sign up</h1>
+	<form method="post">
+		{% csrf_token %}
+		{{ form.username }}
+        <p>Username</p>
+        {{ form.email }}
+        <p>Email</p>
+        {{ form.password1 }}
+        <p>Password</p>
+        {{ form.password2 }}<br>
+        <p>Confirm your password</p>
+        <p></p>
+		<button class="btn btn-primary" type="submit">Sign up</button>
+	</form>
+	<p class="text-center">If you already have an account, <a href="/login">login</a> instead.</p>
+</div>
+
+{% endblock %}
